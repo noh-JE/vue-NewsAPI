@@ -1,10 +1,7 @@
 <template>
   <div id="app">
     <HeaderView />
-    <div class="contents">
-      <!-- contents 영역으로 잡힘 -->
-      <router-view></router-view>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -19,11 +16,6 @@ export default {
 }
 </script>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-}
+<style lang="css">
+  @import "assets/css/style.css";
 </style>

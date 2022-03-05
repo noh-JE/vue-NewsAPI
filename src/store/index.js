@@ -11,29 +11,53 @@ export const store = new Vuex.Store({
     jobs: [],
     ask: []
   },
+  getters: {
+    fetchedNews(state) {
+      return state.news
+    },
+    fetchedJobs(state) {
+      return state.jobs
+    },
+    fetchedAsk(state) {
+      return state.ask
+    }
+  },
+  mutations: {
+    SET_NEWS(state, news) {
+      state.news = news
+    },
+    SET_JOBS(state, jobs) {
+      state.jobs = jobs
+    },
+    SET_ASK(state, ask) {
+      state.ask = ask
+    }
+  },
   actions: {
-    FETCH_NEWS() {
+    FETCH_NEWS({ commit }) { //mutation에 접근하기 위해 필수 변수 context
       fetchNewsAPI()
-        .then(response => {
-          this.state.news = response.data
+        .then((response) => {
+           // commit(response.data)
+          // context.commit('SET_NEWS', response.data) //mutation에 데이터 넘기기
+          commit('SET_NEWS', response.data) //디스턱처리
         })
         .catch(error => {
           console.log (error)
         })
     },
-    FETCH_JOBS() {
+    FETCH_JOBS({ commit }) {
       fetchJobsAPI()
-        .then(response => {
-          this.state.jobs = response.data
+        .then((response) => {
+          commit('SET_JOBS', response.data)
         })
         .catch(error => {
           console.log (error)
         })
     },
-    FETCH_ASK() {
+    FETCH_ASK({ commit }) {
       fetchAskAPI()
-        .then(response => {
-          this.state.ask = response.data
+        .then((response) => {
+          commit('SET_ASK', response.data)
         })
         .catch(error => {
           console.log (error)
