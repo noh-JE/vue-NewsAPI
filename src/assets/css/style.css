@@ -61,3 +61,26 @@ header li a:hover {
 .contents .info .user:hover {
     text-decoration: underline;
 }
+.ask-user strong,
+.comment strong {
+    display: block;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+.ask-user {
+    padding: 10px;
+    color: #fff;
+    background: cadetblue;
+}
+.ask-user a {
+    color: #fff;
+    font-size: 18px;
+}
+.ask-user p {
+    font-size: 14px;
+}
+.comment {
+    margin-top: 20px;
+    padding: 10px;
+    background: antiquewhite;
+}

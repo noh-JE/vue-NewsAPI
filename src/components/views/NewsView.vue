@@ -7,7 +7,8 @@
         <div class="info">
           <p class="date">작성일 : {{ list.time_ago }}</p>
           <div v-if="list.user">
-            <span>작성자 : </span><a class="user">{{ list.user }}</a>
+            <span>작성자 : </span>
+            <router-link class="user" v-bind:to="`/user/${list.user}`">{{ list.user }}</router-link>
           </div>
         </div>
       </li>

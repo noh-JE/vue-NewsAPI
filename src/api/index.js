@@ -14,9 +14,17 @@ const fetchJobsAPI = () => {
 const fetchAskAPI = () => {
   return axios.get(`${config.baseUrl}ask/1.json`)
 }
+const fetchUserAPI = (name) => {
+  return axios.get(`${config.baseUrl}user/${name}.json`)
+}
+const fetchItemAPI = (itemID) => {
+  return axios.get(`${config.baseUrl}item/${itemID}.json`)
+}
 
 export {
   fetchNewsAPI,
   fetchJobsAPI,
   fetchAskAPI,
+  fetchUserAPI,
+  fetchItemAPI
 }

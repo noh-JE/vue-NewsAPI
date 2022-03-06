@@ -3,11 +3,13 @@
     <h1>Ask</h1>
     <ul>
       <li v-for="list in askItems" v-bind:key="list.id">
-        <a class="title" v-bind:href="list.url" target="_blank">{{ list.title }}</a>
+        <router-link v-bind:to="`item/${list.id}`">{{ list.title }}</router-link>
+<!--        <a class="title" v-bind:href="list.url"></a>-->
         <div class="info">
           <p class="date">작성일 : {{ list.time_ago }}</p>
           <div v-if="list.user">
-            <span>작성자 : </span><a class="user">{{ list.user }}</a>
+            <span>작성자 : </span>
+            <router-link class="user" v-bind:to="`/user/${list.user}`">{{ list.user }}</router-link>
           </div>
         </div>
       </li>
