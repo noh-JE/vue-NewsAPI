@@ -1,6 +1,7 @@
 <template>
   <div class="contents">
-    <h1>Ask Comment</h1><section>
+    <h1>Ask Comment</h1>
+    <section>
       <div class="ask-user">
         <strong>User Info</strong>
         <router-link v-bind:to="`/user/${fetchedItem.user}`">{{fetchedItem.user}}</router-link>

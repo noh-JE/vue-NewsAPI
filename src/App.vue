@@ -1,12 +1,14 @@
 <template>
   <div id="app">
     <HeaderView />
-    <router-view></router-view>
+    <transition name="page">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
-import HeaderView from '@/components/common/HeaderView';
+import HeaderView from '@/components/HeaderView';
 
 export default {
   name: 'App',
@@ -18,4 +20,14 @@ export default {
 
 <style lang="css">
   @import "assets/css/style.css";
+  /* we will explain what these classes do next! */
+  .page-enter-active,
+  .page-leave-active {
+    transition: opacity 0.2s ease;
+  }
+
+  .page-enter-from,
+  .page-leave-to {
+    opacity: 0;
+  }
 </style>
