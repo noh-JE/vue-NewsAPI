@@ -1,17 +1,21 @@
 <template>
   <div class="contents">
-    <h1>User Information</h1>
-
-    <p><span>USER : </span>{{ userInfo.id }}</p>
-    <p><span>DATE : </span>{{ userInfo.created }}</p>
-    <p><span>KARMA : </span>{{ userInfo.karma }}</p>
+    <user-profile :info="userInfo">
+      <p slot="username"><span>USER : </span>{{ userInfo.id }}</p>
+      <p slot="time"><span>DATE : </span>{{ userInfo.created }}</p>
+      <p slot="karma"><span>KARMA : </span>{{ userInfo.karma }}</p>
+    </user-profile>
   </div>
 </template>
 
 <script>
+import UserProfile from '@/components/UserProfile';
 
 export default {
   name: 'UserView',
+  components: {
+    UserProfile,
+  },
   computed: {
     userInfo() {
       return this.$store.state.user;

@@ -2,12 +2,10 @@
   <div class="contents">
     <h1>Ask Comment</h1>
     <section>
-      <div class="ask-user">
-        <strong>User Info</strong>
-        <router-link v-bind:to="`/user/${fetchedItem.user}`">{{fetchedItem.user}}</router-link>
-        <p>{{fetchedItem.time_ago}}</p>
-      </div>
-
+      <user-profile :info="fetchedItem">
+        <router-link v-bind:to="`/user/${fetchedItem.user}`" slot="username">username : {{fetchedItem.user}}</router-link>
+        <template slot="time">{{fetchedItem.time_ago}}</template>
+      </user-profile>
       <div class="comment">
         <strong>COMMENT</strong>
         <div v-html="fetchedItem.content" />
@@ -17,10 +15,14 @@
 </template>
 
 <script>
+import UserProfile from '@/components/UserProfile';
 import { mapGetters } from 'vuex';
 
 export default {
   name: 'ItemView',
+  components: {
+    UserProfile
+  },
   computed: {
     ...mapGetters([
         'fetchedItem'
