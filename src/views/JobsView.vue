@@ -3,7 +3,6 @@
 </template>
 
 <script>
-
 import ListItem from '@/components/ListItem';
 
 export default {

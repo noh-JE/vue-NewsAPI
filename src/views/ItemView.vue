@@ -3,7 +3,7 @@
     <h1>Ask Comment</h1>
     <section>
       <user-profile :info="fetchedItem">
-        <router-link v-bind:to="`/user/${fetchedItem.user}`" slot="username">username : {{fetchedItem.user}}</router-link>
+        <router-link :to="`/user/${fetchedItem.user}`" slot="username">username : {{fetchedItem.user}}</router-link>
         <template slot="time">{{fetchedItem.time_ago}}</template>
       </user-profile>
       <div class="comment">
