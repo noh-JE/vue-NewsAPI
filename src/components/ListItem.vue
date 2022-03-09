@@ -4,7 +4,7 @@
     <ul>
       <li v-for="item in listItems" v-bind:key="item.id">
         <!-- title 영역 분기 처리 -->
-        <template v-if="item.url">  <!-- 가상 태그 -->
+        <template v-if="item.type !== 'ask'">  <!-- 가상 태그 -->
           <a class="title" v-bind:href="item.url" target="_blank">{{ item.title }}</a>
         </template>
         <template v-else>
