@@ -30,19 +30,6 @@
 
 export default {
   name: 'ListItem', // views page컴포넌트가 갖고있는 fetch, styling 통합
-  created() {
-    const name = this.$route.name;
-    let page;
-
-    if(name === 'news') {
-      page = 'FETCH_NEWS';
-    } else if(name === 'jobs') {
-      page = 'FETCH_JOBS';
-    } else if(name === 'ask') {
-      page = 'FETCH_ASK';
-    }
-    this.$store.dispatch(page);
-  },
   computed: {
     listItems() {
       const name = this.$route.name;

@@ -7,6 +7,7 @@ export default {
         // commit(response.data)
         // context.commit('SET_NEWS', response.data) //mutation에 데이터 넘기기
         commit('SET_NEWS', response.data) //디스턱처리
+        return response
       })
       .catch(error => {
         console.log (error)
@@ -16,6 +17,7 @@ export default {
     fetchJobsAPI()
       .then((response) => {
         commit('SET_JOBS', response.data)
+        return response
       })
       .catch(error => {
         console.log (error)
@@ -25,6 +27,7 @@ export default {
     fetchAskAPI()
       .then((response) => {
         commit('SET_ASK', response.data)
+        return response
       })
       .catch(error => {
         console.log (error)

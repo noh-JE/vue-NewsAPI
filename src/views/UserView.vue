@@ -2,7 +2,7 @@
   <div class="contents">
     <user-profile :info="userInfo">
       <p slot="username"><span>USER : </span>{{ userInfo.id }}</p>
-      <p slot="time"><span>DATE : </span>{{ userInfo.created }}</p>
+      <p slot="time">{{'Joined ' + userInfo.created }}</p>
       <p slot="karma"><span>KARMA : </span>{{ userInfo.karma }}</p>
     </user-profile>
   </div>
