@@ -2,9 +2,10 @@ import { fetchItemAPI, fetchList, fetchUserAPI } from '@/api';
 
 export default {
   FETCH_LIST({ commit }, pageName) {
-    fetchList(pageName)
+    return fetchList(pageName)
       .then(response => {
         commit('SET_LIST', response.data)
+        return response
       })
       .catch(error => {
         console.log (error)
