@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import createListView from '@/views/CreateListView.js'
 import UserView from '@/views/UserView'
 import ItemView from '@/views/ItemView'
+import bus from '@/utils/bus';
+import { store } from '@/store';
 
 Vue.use(VueRouter);
 
@@ -14,17 +16,44 @@ const routes = [
   {
     path: '/news',
     name: 'news',
-    component: createListView('NewsView')
+    component: createListView('NewsView'),
+    beforeEnter: (to, from, next) => {
+      bus.$emit('start:spinner')
+      store.dispatch('FETCH_LIST', to.name)
+        .then(() => next())
+        .catch((error) => {
+          console.log ('error', error);
+        })
+      // console.log (to, from, next)
+    }
   },
   {
     path: '/jobs',
     name: 'jobs',
-    component: createListView('JobsView')
+    component: createListView('JobsView'),
+    beforeEnter: (to, from, next) => {
+      bus.$emit('start:spinner')
+      store.dispatch('FETCH_LIST', to.name)
+        .then(() => next())
+        .catch((error) => {
+          console.log ('error', error);
+        })
+      // console.log (to, from, next)
+    }
   },
   {
     path: '/ask',
     name: 'ask',
-    component: createListView('AskView')
+    component: createListView('AskView'),
+    beforeEnter: (to, from, next) => {
+     bus.$emit('start:spinner')
+      store.dispatch('FETCH_LIST', to.name)
+        .then(() => next())
+        .catch((error) => {
+          console.log ('error', error);
+        })
+      // console.log (to, from, next)
+    }
   },
   {
     path: '/user/:id',

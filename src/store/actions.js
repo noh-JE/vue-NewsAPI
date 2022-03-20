@@ -12,7 +12,7 @@ export default {
       })
   },
   FETCH_USER({ commit }, name) {
-    fetchUserAPI(name)
+    return fetchUserAPI(name)
       .then( response => {
         commit('SET_USER', response.data)
       })
@@ -21,7 +21,7 @@ export default {
       })
   },
   FETCH_ITEM({ commit }, itemID) {
-    fetchItemAPI(itemID)
+    return fetchItemAPI(itemID)
       .then(response => {
         commit('SET_ITEM', response.data)
       })
