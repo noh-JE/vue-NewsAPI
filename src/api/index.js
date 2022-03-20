@@ -7,6 +7,15 @@ const config = {
 
 const fetchNewsAPI = () => {
   return axios.get(`${config.baseUrl}news/1.json`)
+
+  // actions.js 에서는 try, catch 문 사용 안해도 됨
+  // async function fetchNewsAPI() {}
+  // try {
+  //   const response = axios.get(`${config.baseUrl}news/1.json`);
+  //   return response;
+  // } catch (error) {
+  //   console.log (error)
+  // }
 }
 const fetchJobsAPI = () => {
   return axios.get(`${config.baseUrl}jobs/1.json`)
