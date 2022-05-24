@@ -20,15 +20,6 @@ export default {
   li {
     position: relative;
   }
-  li:nth-child(2):before,
-  li:nth-child(2):after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background: #fff;
-  }
   li:nth-child(2):before {
     left: -50px;
   }
